@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
        Inventory Manager V2
@@ -9,19 +9,19 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" onclick="directRequest()">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Stock Manager</a>
+              <a class="nav-link" onclick="directRequest()">Stock Manager</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tools</a>
+              <a class="nav-link" onclick="directRequest()">Tools</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-disabled="true">Data</a>
+              <a class="nav-link" aria-disabled="true" onclick="directRequest()">Data</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-disabled="true">Settings</a>
+                <a class="nav-link" aria-disabled="true" onclick="directRequest()">Settings</a>
               </li>
           </ul>
         <form class="d-flex" role="search">
