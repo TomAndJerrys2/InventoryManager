@@ -1,9 +1,10 @@
-package io.inventory_manager;
+package io.inventory_manager.SpringAPI.model;
 
 import java.sql.Date;
 // Libraries
 import java.util.Objects;
 
+import io.Exceptions.InvalidPasswordFormatException;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -11,7 +12,7 @@ import jakarta.persistence.Id;
 // Class for defining User/Account Properties for login/sign etc.
 
 @Entity // Ready to store via JPA
-class UserEntity {
+public class UserEntity {
     // Basic User Information
     private String firstName;
     private String lastName;
@@ -23,11 +24,10 @@ class UserEntity {
     // Meta-data
     public Date accountCreation = null; // default
 
-    private @Id 
-    @GeneratedValue Long _id;
+    private @Id @GeneratedValue Long _id;
 
     // Default Constructor
-    UserEntity() {
+    public UserEntity() {
         System.out.println("[+] Constructed Empty User Entity");
     }
 
@@ -37,7 +37,7 @@ class UserEntity {
         this.lastName = lname;
         this.email = email;
         this.userName = uName;
-        this.passWord = setPassword();
+        this.passWord = pWord; // refactor later
     }
 
     // Getters
@@ -53,19 +53,28 @@ class UserEntity {
         return this.email;
     }
 
+    public Long getId() {
+        return this._id;
+    }
+
     // Setters
     private final void setId() {
-        
+        // Some algorithm for creating a psuedo-random ID (Long)
     }
 
     protected void setUsername(String uName) {
         this.userName = uName;
     }
 
+    // Refactor later to make safer
+    // Add Encryption adn Flags
     protected void setPassword(String pWord) {
+        if (pWord == null) {
+            // throw new InvalidPasswordFormatException();
+        }
+
         this.passWord = pWord;
     }
 
     // Class Methods
-    protected 
 }
