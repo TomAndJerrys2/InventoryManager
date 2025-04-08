@@ -26,7 +26,7 @@ public class EntityController {
     }
 
     // Mapping requests to handle entity information
-    @GetMapping
+    @GetMapping("/user")
     public UserEntity getUserEntity(@RequestParam Long entityID) {
         Optional activeUser = entityService.getUserEntity(entityID);
         // inefficient but works for now
